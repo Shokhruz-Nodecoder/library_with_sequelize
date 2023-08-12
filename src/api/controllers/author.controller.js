@@ -4,6 +4,7 @@ const path = require("path");
 
 const create = async (req, res) => {
   try {
+    console.log(req.files)
     const { firstname, lastname, birth, death, country, bio } = req.body;
     console.log(req.body)
     const { image } = req.files;
@@ -12,7 +13,7 @@ const create = async (req, res) => {
     const imagename = `${uuid()}${path.extname(image.name)}`;
     console.log(imagename);
 
-    image.mv(process.cwd() + "/uploads/" + imagename);
+    image.mv(process.cwd() + "/src/uploads/" + imagename);
     await Author.create(
       {
         firstname,

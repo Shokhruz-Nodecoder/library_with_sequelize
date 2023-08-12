@@ -7,14 +7,14 @@ const cookie = require("cookie-parser")
 const Relationship = require("../models/association.model")
 const modules = (app) =>{
     app.use(cors())
+    app.use(fileUpload())
     app.use(express.json())
-    app.use(routes)
     app.use(express.urlencoded({ extended: true }))
     app.use(cookie())
-    app.use(fileUpload())
     Relationship()
-
+    
     app.use(express.static(process.cwd() + "/uploads"))
+    app.use(routes)
 }
 
-module.exports = modules
+module.exports = modules  

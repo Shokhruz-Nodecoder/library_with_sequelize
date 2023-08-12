@@ -6,7 +6,7 @@ const bootstrapt = async (app) => {
   await sequlize.authenticate({
     logging: false,
   });
-  await sequlize.sync({ alter: true, logginng: false });
+  await sequlize.sync({ alter: true, logging: false });
   app.listen(port, () => {
     console.log(port);
   });
