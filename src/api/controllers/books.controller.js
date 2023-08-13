@@ -4,7 +4,7 @@ const path = require("path");
 
 const create = async (req, res) => {
   try {
-    const { title, page, year, price, country, author, description,category_id } = req.body;
+    const { title, page, year, price, country, author, description,category_id,author_id } = req.body;
     const { image } = req.files;
     const imagename = `${uuid()}${path.extname(image.name)}`;
     console.log(imagename);
